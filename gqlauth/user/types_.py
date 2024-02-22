@@ -25,7 +25,8 @@ USER_FIELDS = {
     StrawberryField(
         python_name=USER_MODEL.EMAIL_FIELD, default=None, type_annotation=StrawberryAnnotation(auto)
     ),
-}.union(gqlauth_settings.UPDATE_MUTATION_FIELDS)
+}.union(gqlauth_settings.UPDATE_MUTATION_FIELDS).union(
+    gqlauth_settings.USER_EXTRA_FIELDS)
 
 
 @strawberry_django.filters.filter(UserStatus)

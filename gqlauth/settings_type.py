@@ -197,6 +197,7 @@ class GqlAuthSettings:
         default_factory=lambda: {first_name_field, last_name_field}
     )
     """Fields on update account mutation."""
+    USER_EXTRA_FIELDS: Set[StrawberryField] = field(default_factory=set)
 
     # email tokens
     EXPIRATION_ACTIVATION_TOKEN: timedelta = timedelta(days=7)
